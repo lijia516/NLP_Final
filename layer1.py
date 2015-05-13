@@ -113,8 +113,8 @@ svm_meta_meta = SklearnClassifier(LinearSVC()).train(all_trn3)
 intermediate = []
 intermediate.append(svm_base.classify_many(test_feature))
 intermediate.append(dt_base.classify_many(test_feature))
-intermediate.append(nb_base.classify_many(test_feature))
 intermediate.append(ent_base.classify_many(test_feature))
+intermediate.append(nb_base.classify_many(test_feature))
 intermediate.append(knn_base.classify_many(test_feature))
 test_feature = merge_feature(intermediate)
 
@@ -122,8 +122,8 @@ test_feature = merge_feature(intermediate)
 intermediate = []
 intermediate.append(svm_meta.classify_many(test_feature))
 intermediate.append(dt_meta.classify_many(test_feature))
-intermediate.append(nb_meta.classify_many(test_feature))
 intermediate.append(ent_meta.classify_many(test_feature))
+intermediate.append(nb_meta.classify_many(test_feature))
 intermediate.append(knn_meta.classify_many(test_feature))
 
 final_feature = merge_feature(intermediate)
