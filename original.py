@@ -41,13 +41,13 @@ import pickle
 #knn = SklearnClassifier(KNeighborsClassifier(3)).train(all_trn)
 #knn_original = knn.classify_many(test_feature)
 #print compute_accuracy(test_label, knn_original)
-
+#
 #with open('serve_original_acc.pickle', 'w') as f:
 #with open('line_original_acc.pickle', 'w') as f:
 #with open('hard_original_acc.pickle', 'w') as f:
 #with open('interest_original_acc.pickle', 'w') as f:
 #    pickle.dump([svm_original, dt_original, nb_original, ent_original, knn_original], f)
-
+#
 with open('serve_original_acc.pickle') as f:
     s1o, d1o, n1o, e1o, k1o = pickle.load(f)
 with open('line_original_acc.pickle') as f:
@@ -58,6 +58,11 @@ with open('interest_original_acc.pickle',) as f:
     s4o, d4o, n4o, e4o, k4o = pickle.load(f)
 
 result_list = []
+#result_list.append(s1o)
+#result_list.append(d1o)
+#result_list.append(n1o)
+#result_list.append(e1o)
+#result_list.append(k1o)
 result_list.append(s1o + s2o + s3o + s4o)
 result_list.append(d1o + d2o + d3o + d4o)
 result_list.append(n1o + n2o + n3o + n4o)
@@ -85,6 +90,7 @@ label_all += test_label
 result_list.append(label_all)
 
 for i in range(len(result_list)):
-    for j in range(len(result_list)-1):
+    for j in range(len(result_list)):
         print str(i)+"_"+str(j)
         print compute_accuracy(result_list[i],result_list[j])
+
