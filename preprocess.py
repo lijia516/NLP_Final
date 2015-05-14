@@ -24,14 +24,14 @@ print "Data Preprocessing"
 (train_list_h, label_list_h, test_h) = split_senseval('hard.pos',4)
 (train_list_i, label_list_i, test_i) = split_senseval('interest.pos',4)
 
-with open('serve.pickle', 'w') as f:
+with open('serve_r.pickle', 'w') as f:
     pickle.dump([train_list_s, label_list_s, test_s], f)
 
-with open('line.pickle', 'w') as f:
+with open('line_r.pickle', 'w') as f:
     pickle.dump([train_list_l, label_list_l, test_l], f)
 
-with open('hard.pickle', 'w') as f:
+with open('hard_r.pickle', 'w') as f:
     pickle.dump([train_list_h, label_list_h, test_h], f)
 
-with open('interest.pickle', 'w') as f:
+with open('interest_r.pickle', 'w') as f:
     pickle.dump([train_list_i, label_list_i, test_i], f)

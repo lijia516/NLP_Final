@@ -76,15 +76,15 @@ def features_selection(instance, start, end):
             features[str(i - instance.position)+"W"] = word
     return features
 
-def create_cross_data(train_list, test):
+def create_cross_data(train_list, test, start, end):
     training_set = []
     testing_set = []
     cv_testing_set = []
-    testing_set = [ (features_selection(i,3,3)) for i in test ]
+    testing_set = [ (features_selection(i,start,end)) for i in test ]
     test_label = [ (i.sense) for i in test ]
     for j in range(len(train_list)):
-        training_set.append([ (features_selection(i,3,3), i.sense) for i in train_list[j]])
-        cv_testing_set.append([ (features_selection(i,3,3)) for i in train_list[j]])
+        training_set.append([ (features_selection(i,start,end), i.sense) for i in train_list[j]])
+        cv_testing_set.append([ (features_selection(i,start,end)) for i in train_list[j]])
 
     cv_training_set = []
     for j in range(len(training_set)):
